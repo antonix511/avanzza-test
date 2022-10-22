@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "14dcce45-a87a-4844-970d-f8edb4c69079",
+		"name": "Avanzza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6308524"
+	},
+	"item": [
+		{
+			"name": "Create File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filenames[]",
+							"type": "file",
+							"src": [
+								"/D:/Work/Accesos/REPORTE 28-02-2022.pdf",
+								"/D:/Work/Accesos/REPORTE 28-02-2022-2.pdf"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/files/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"files",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List File",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwOTAvbG9naW4iLCJpYXQiOjE2NjY0NzY5OTcsImV4cCI6MTY2NjQ4MDU5NywibmJmIjoxNjY2NDc2OTk3LCJqdGkiOiJJaDZEd2F5QzBROWZRWllqIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.b46ATtmJlrT9MVVDU5OljlJs6F2kjE6FUu_WNq_nEdI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/files?only_deleted=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"files"
+					],
+					"query": [
+						{
+							"key": "only_deleted",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Files",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/files/22?only_deleted=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"files",
+						"22"
+					],
+					"query": [
+						{
+							"key": "only_deleted",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

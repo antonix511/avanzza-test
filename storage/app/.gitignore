@@ -1,0 +1,4 @@
+*
+!public/
+!file_upload/
+!.gitignore
